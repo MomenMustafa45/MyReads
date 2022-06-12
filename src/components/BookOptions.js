@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 export const BookOptions = ({
@@ -6,8 +6,6 @@ export const BookOptions = ({
   id,
   messageBookHandler,
 }) => {
-  const [state, setState] = useState(false);
-
   // required props
   // required props
   BookOptions.propTypes = {
