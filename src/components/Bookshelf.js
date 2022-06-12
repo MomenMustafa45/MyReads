@@ -2,7 +2,7 @@ import React from "react";
 import Book from "./Book";
 import PropTypes from "prop-types";
 
-const Bookshelf = ({ title, bookList, currentReadingClick }) => {
+const Bookshelf = ({ bookList, currentReadingClick }) => {
   // required props
   // required props
   Bookshelf.propTypes = {

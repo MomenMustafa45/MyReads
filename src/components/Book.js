@@ -2,14 +2,22 @@ import React from "react";
 import { BookOptions } from "./BookOptions";
 import PropTypes from "prop-types";
 
-const Book = ({ bgImageURL, title, authors, imageURL, currentClick, id }) => {
+const Book = ({
+  bgImageURL,
+  title,
+  authors,
+  imageURL,
+  currentClick,
+  id,
+  messageBookHandler,
+}) => {
   // required props
   // required props
   Book.propTypes = {
     title: PropTypes.string.isRequired,
     currentClick: PropTypes.func.isRequired,
     id: PropTypes.string.isRequired,
-    authors: PropTypes.array.isRequired,
+    authors: PropTypes.array,
     imageURL: PropTypes.string,
     bgImageURL: PropTypes.string,
   };
@@ -28,7 +36,11 @@ const Book = ({ bgImageURL, title, authors, imageURL, currentClick, id }) => {
                 : `url("${imageURL}")`,
             }}
           />
-          <BookOptions currentReadingClick={currentClick} id={id} />
+          <BookOptions
+            currentReadingClick={currentClick}
+            id={id}
+            messageBookHandler={messageBookHandler}
+          />
         </div>
         <div className="book-title">{title}</div>
         <div className="book-authors">{authors ? authors : "Harper Lee"}</div>

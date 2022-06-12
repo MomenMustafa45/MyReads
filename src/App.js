@@ -32,14 +32,14 @@ const BooksApp = () => {
   const [wantToReadList, setWantToReadList] = useState([]);
   const [readList, setReadList] = useState([]);
 
-  useEffect(() => {
-    const getData = async () => {
-      const response = await BooksAPI.getAll();
-      setBooks(response);
-    };
-    getData();
-  }, []);
-  console.log(books);
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const response = await BooksAPI.getAll();
+  //     setBooks(response);
+  //   };
+  //   getData();
+  // }, []);
+  // console.log(books);
 
   const currentReadingBook = async (bookID, value) => {
     const response = await BooksAPI.get(bookID);
@@ -129,6 +129,11 @@ const BooksApp = () => {
     }
   };
 
+  const searchForBookHandler = async (value) => {
+    const response = await BooksAPI.search(value);
+    setBooks(response);
+  };
+
   return (
     <div className="app">
       <Routes>
@@ -146,7 +151,11 @@ const BooksApp = () => {
         <Route
           path="search"
           element={
-            <SearchPage allBooks={books} currentClick={currentReadingBook} />
+            <SearchPage
+              allBooks={books}
+              currentClick={currentReadingBook}
+              searchForBook={searchForBookHandler}
+            />
           }
         />
       </Routes>

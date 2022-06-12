@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-export const BookOptions = ({ currentReadingClick, id }) => {
+export const BookOptions = ({
+  currentReadingClick,
+  id,
+  messageBookHandler,
+}) => {
+  const [state, setState] = useState(false);
+
   // required props
   // required props
   BookOptions.propTypes = {
@@ -13,6 +19,9 @@ export const BookOptions = ({ currentReadingClick, id }) => {
     const value = e.target.value;
     currentReadingClick(id, value);
     console.log(value);
+    if (messageBookHandler) {
+      messageBookHandler();
+    }
   };
 
   return (

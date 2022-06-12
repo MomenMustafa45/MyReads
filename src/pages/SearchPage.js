@@ -1,22 +1,53 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
+import * as BooksAPI from "../BooksAPI";
 import { Link } from "react-router-dom";
 import Book from "../components/Book";
 
-const SearchPage = ({ currentClick, allBooks }) => {
+const SearchPage = ({ currentClick }) => {
+  const [messageBook, setMessageBook] = useState(false);
+  const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
-  const searchHandler = async (e) => {
-    const results = await allBooks.filter((item) =>
-      item.title.toLowerCase().includes(e.target.value)
-    );
-    setFilteredBooks(results);
-  };
-  //
+
+  // const searchHandler = async (e) => {
+  //   const results = await allBooks.filter((item) =>
+  //     item.title.toLowerCase().includes(e.target.value)
+  //   );
+  //   setFilteredBooks(results);
+  // };
+  // //
+  // const search = (e) => {
+  //   setFilteredBooks(e.target.value);
+  //   searchForBook(e.target.value);
+  // };
+
   // required props
   // required props
   SearchPage.propTypes = {
     currentClick: PropTypes.func.isRequired,
-    allBooks: PropTypes.array.isRequired,
+  };
+
+  const searchForBookHandler = async (e) => {
+    const value = e.target.value;
+    setFilteredBooks(value);
+    if (value) {
+      const response = await BooksAPI.search(e.target.value);
+
+      if (response.length > 0) {
+        setBooks(response);
+      } else {
+        setBooks([]);
+      }
+    } else {
+      setBooks([]);
+    }
+  };
+
+  const messageBookHandler = () => {
+    setMessageBook(true);
+    setTimeout(() => {
+      setMessageBook(false);
+    }, 3000);
   };
 
   return (
@@ -38,27 +69,19 @@ const SearchPage = ({ currentClick, allBooks }) => {
             <input
               type="text"
               placeholder="Search by title or author"
-              onChange={searchHandler}
+              value={filteredBooks}
+              onChange={searchForBookHandler}
             />
           </div>
         </div>
         <div className="search-books-results">
+          {messageBook && (
+            <div className="show-text">
+              <p>Book added successfully!</p>
+            </div>
+          )}
           <ol className="books-grid">
-            {filteredBooks.length > 0 ? (
-              filteredBooks.map((book) => {
-                return (
-                  <li key={book.id}>
-                    <Book
-                      title={book.title}
-                      imageURL={book.imageLinks.smallThumbnail}
-                      authors={book.authors}
-                      currentClick={currentClick}
-                      id={book.id}
-                    />
-                  </li>
-                );
-              })
-            ) : (
+            {books.length === 0 ? (
               <div>
                 <h5>Search for your favorite book (EX):</h5>
                 <p>
@@ -80,6 +103,23 @@ const SearchPage = ({ currentClick, allBooks }) => {
                   'Web Development', 'iOS'
                 </p>
               </div>
+            ) : (
+              books.map((book) => {
+                return (
+                  <li key={book.id}>
+                    <Book
+                      title={book.title}
+                      imageURL={
+                        book.imageLinks ? book.imageLinks.smallThumbnail : ""
+                      }
+                      authors={book.authors}
+                      currentClick={currentClick}
+                      id={book.id}
+                      messageBookHandler={messageBookHandler}
+                    />
+                  </li>
+                );
+              })
             )}
           </ol>
         </div>
