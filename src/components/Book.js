@@ -15,7 +15,6 @@ const Book = ({
 
   Book.propTypes = {
     title: PropTypes.string.isRequired,
-    currentClick: PropTypes.func.isRequired,
     authors: PropTypes.array,
     imageURL: PropTypes.string,
     bgImageURL: PropTypes.string,

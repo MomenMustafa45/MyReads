@@ -1,14 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 export const BookOptions = ({ onClick, book, updateTheShelf }) => {
   // const [defaultShelf, setDefaultShelf] = useState("");
   // required props
   // required props
-  BookOptions.propTypes = {
-    onClick: PropTypes.func.isRequired,
-    updateShelf: PropTypes.func.isRequired,
-  };
 
   const updateShelf = (e) => {
     const value = e.target.value;

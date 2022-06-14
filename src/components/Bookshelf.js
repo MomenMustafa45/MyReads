@@ -8,7 +8,6 @@ const Bookshelf = ({ bookList, showTextHandler, updateTheShelf }) => {
   Bookshelf.propTypes = {
     bookList: PropTypes.array.isRequired,
     updateTheShelf: PropTypes.func.isRequired,
-    showTextHandler: PropTypes.func.isRequired,
   };
   return (
     <div>

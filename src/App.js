@@ -134,7 +134,7 @@ const BooksApp = () => {
     setTimeout(() => {
       setText(false);
       console.log(text);
-    }, 5000);
+    }, 3000);
   };
   useEffect(
     () => {

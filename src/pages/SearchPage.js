@@ -10,7 +10,7 @@ const SearchPage = ({ updateTheShelf, showText, showTextHandler }) => {
 
   SearchPage.propTypes = {
     updateTheShelf: PropTypes.func.isRequired,
-    showText: PropTypes.string.isRequired,
+
     showTextHandler: PropTypes.func.isRequired,
   };
 
