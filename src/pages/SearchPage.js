@@ -4,10 +4,15 @@ import * as BooksAPI from "../BooksAPI";
 import { Link } from "react-router-dom";
 import Book from "../components/Book";
 
-const SearchPage = ({ currentClick }) => {
-  const [messageBook, setMessageBook] = useState(false);
+const SearchPage = ({ updateTheShelf, showText, showTextHandler }) => {
   const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
+
+  SearchPage.propTypes = {
+    updateTheShelf: PropTypes.func.isRequired,
+    showText: PropTypes.string.isRequired,
+    showTextHandler: PropTypes.func.isRequired,
+  };
 
   // const searchHandler = async (e) => {
   //   const results = await allBooks.filter((item) =>
@@ -23,9 +28,9 @@ const SearchPage = ({ currentClick }) => {
 
   // required props
   // required props
-  SearchPage.propTypes = {
-    currentClick: PropTypes.func.isRequired,
-  };
+  // SearchPage.propTypes = {
+  //   currentClick: PropTypes.func.isRequired,
+  // };
 
   const searchForBookHandler = async (e) => {
     const value = e.target.value;
@@ -41,13 +46,6 @@ const SearchPage = ({ currentClick }) => {
     } else {
       setBooks([]);
     }
-  };
-
-  const messageBookHandler = () => {
-    setMessageBook(true);
-    setTimeout(() => {
-      setMessageBook(false);
-    }, 3000);
   };
 
   return (
@@ -75,7 +73,7 @@ const SearchPage = ({ currentClick }) => {
           </div>
         </div>
         <div className="search-books-results">
-          {messageBook && (
+          {showText && (
             <div className="show-text">
               <p>Book added successfully!</p>
             </div>
@@ -113,9 +111,10 @@ const SearchPage = ({ currentClick }) => {
                         book.imageLinks ? book.imageLinks.smallThumbnail : ""
                       }
                       authors={book.authors}
-                      currentClick={currentClick}
                       id={book.id}
-                      messageBookHandler={messageBookHandler}
+                      updateTheShelf={updateTheShelf}
+                      book={book}
+                      currentClick={showTextHandler}
                     />
                   </li>
                 );

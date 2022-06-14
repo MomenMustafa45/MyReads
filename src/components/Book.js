@@ -8,15 +8,14 @@ const Book = ({
   authors,
   imageURL,
   currentClick,
-  id,
-  messageBookHandler,
+  updateTheShelf,
+  book,
 }) => {
   // required props
-  // required props
+
   Book.propTypes = {
     title: PropTypes.string.isRequired,
     currentClick: PropTypes.func.isRequired,
-    id: PropTypes.string.isRequired,
     authors: PropTypes.array,
     imageURL: PropTypes.string,
     bgImageURL: PropTypes.string,
@@ -37,9 +36,9 @@ const Book = ({
             }}
           />
           <BookOptions
-            currentReadingClick={currentClick}
-            id={id}
-            messageBookHandler={messageBookHandler}
+            onClick={currentClick}
+            updateTheShelf={updateTheShelf}
+            book={book}
           />
         </div>
         <div className="book-title">{title}</div>

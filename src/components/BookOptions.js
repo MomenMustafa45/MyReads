@@ -1,25 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const BookOptions = ({
-  currentReadingClick,
-  id,
-  messageBookHandler,
-}) => {
+export const BookOptions = ({ onClick, book, updateTheShelf }) => {
+  // const [defaultShelf, setDefaultShelf] = useState("");
   // required props
   // required props
   BookOptions.propTypes = {
-    currentReadingClick: PropTypes.func.isRequired,
-    id: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
+    updateShelf: PropTypes.func.isRequired,
   };
 
-  const addBookHandler = (e) => {
+  const updateShelf = (e) => {
     const value = e.target.value;
-    currentReadingClick(id, value);
+    updateTheShelf(book, value);
     console.log(value);
-    if (messageBookHandler) {
-      messageBookHandler();
-    }
+    onClick();
   };
 
   return (
@@ -29,16 +24,16 @@ export const BookOptions = ({
           <option value="move" disabled>
             Move to...
           </option>
-          <option value="currentlyReading" onClick={addBookHandler}>
+          <option value="currentlyReading" onClick={updateShelf}>
             Currently Reading
           </option>
-          <option value="wantToRead" onClick={addBookHandler}>
+          <option value="wantToRead" onClick={updateShelf}>
             Want to Read
           </option>
-          <option value="read" onClick={addBookHandler}>
+          <option value="read" onClick={updateShelf}>
             Read
           </option>
-          <option value="none" onClick={addBookHandler}>
+          <option value="none" onClick={updateShelf}>
             None
           </option>
         </select>

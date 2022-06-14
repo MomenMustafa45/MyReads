@@ -2,12 +2,13 @@ import React from "react";
 import Book from "./Book";
 import PropTypes from "prop-types";
 
-const Bookshelf = ({ bookList, currentReadingClick }) => {
+const Bookshelf = ({ bookList, showTextHandler, updateTheShelf }) => {
   // required props
   // required props
   Bookshelf.propTypes = {
     bookList: PropTypes.array.isRequired,
-    currentReadingClick: PropTypes.func.isRequired,
+    updateTheShelf: PropTypes.func.isRequired,
+    showTextHandler: PropTypes.func.isRequired,
   };
   return (
     <div>
@@ -20,9 +21,12 @@ const Bookshelf = ({ bookList, currentReadingClick }) => {
                   <Book
                     title={item.title}
                     bgImageURL={item.imageLinks.smallThumbnail}
-                    currentClick={currentReadingClick}
+                    currentClick={showTextHandler}
                     id={item.id}
                     authors={item.authors}
+                    bookList={bookList}
+                    book={item}
+                    updateTheShelf={updateTheShelf}
                   />
                 </li>
               );

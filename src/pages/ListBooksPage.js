@@ -1,23 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import Bookshelf from "../components/Bookshelf";
 import PropTypes from "prop-types";
 
-const ListBooksPage = ({
-  currentReading,
-  currentReadingHandler,
-  wantToReadList,
-  readList,
-}) => {
-  // required props
-  // required props
+const ListBooksPage = ({ showTextHandler, updateTheShelf, allBooks }) => {
+  const [currentReadingSection, setCurrentReadingSection] = useState([]);
+  const [wantToReadSection, setWantToReadSection] = useState([]);
+  const [readSection, setReadSection] = useState([]);
+
   ListBooksPage.propTypes = {
-    currentReadingHandler: PropTypes.func.isRequired,
-    currentReading: PropTypes.array.isRequired,
-    wantToReadList: PropTypes.array.isRequired,
-    readList: PropTypes.array.isRequired,
+    showTextHandler: PropTypes.func.isRequired,
+    updateTheShelf: PropTypes.func.isRequired,
+    allBooks: PropTypes.array.isRequired,
   };
+
+  useEffect(
+    () => {
+      const wantToReadShelf = allBooks.filter(
+        (item) => item.shelf === "wantToRead"
+      );
+      const currentlyReadingShelf = allBooks.filter(
+        (item) => item.shelf === "currentlyReading"
+      );
+
+      const readShelf = allBooks.filter((item) => item.shelf === "read");
+      setCurrentReadingSection(currentlyReadingShelf);
+      setReadSection(readShelf);
+      setWantToReadSection(wantToReadShelf);
+    },
+
+    [allBooks]
+  );
+
+  // required props
+  // required props
+  // ListBooksPage.propTypes = {
+  //   showTextHandler: PropTypes.func.isRequired,
+  //   currentReading: PropTypes.array.isRequired,
+  //   wantToReadList: PropTypes.array.isRequired,
+  //   readList: PropTypes.array.isRequired,
+  // };
+
+  // useEffect(() => {
+  //   const checkCurrentBookShelf = () => {
+  //     const bookShelf = allBooks.filter(
+  //       (item) => item.shelf === "currentlyReading"
+  //     );
+  //     setCurrentReadingSection(bookShelf);
+  //   };
+  //   const checkWantToReadShelf = () => {
+  //     const bookShelf = allBooks.filter((item) => item.shelf === "wantToRead");
+  //     setWantToReadSection(bookShelf);
+  //   };
+  //   const readShelf = () => {
+  //     const bookShelf = allBooks.filter((item) => item.shelf === "read");
+  //     setReadSection(bookShelf);
+  //   };
+  //   checkCurrentBookShelf();
+  //   checkWantToReadShelf();
+  //   readShelf();
+  // }, []);
+
+  // console.log(currentlyReadingShelf);
+  // console.log(wantToReadShelf);
   return (
     <>
       <div className="list-books">
@@ -27,36 +73,36 @@ const ListBooksPage = ({
         <div className="list-books-content">
           <div>
             <h2 className="bookshelf-title">Currently Reading</h2>
-            {currentReading.length === 0 ? (
+            {currentReadingSection.length === 0 ? (
               <h5>
                 You have no reading books yet!. Search and Add your favorite
                 book
               </h5>
             ) : (
               <Bookshelf
-                title="Currently Reading"
-                bookList={currentReading}
-                currentReadingClick={currentReadingHandler}
+                bookList={currentReadingSection}
+                showText={showTextHandler}
+                updateTheShelf={updateTheShelf}
               />
             )}
             <h2 className="bookshelf-title">Want to Read</h2>
-            {wantToReadList.length === 0 ? (
+            {wantToReadSection.length === 0 ? (
               <h5>Books that you want to read is empty!.</h5>
             ) : (
               <Bookshelf
-                title="Want to Read"
-                bookList={wantToReadList}
-                currentReadingClick={currentReadingHandler}
+                bookList={wantToReadSection}
+                showTextHandler={showTextHandler}
+                updateTheShelf={updateTheShelf}
               />
             )}
             <h2 className="bookshelf-title">Read</h2>
-            {readList.length === 0 ? (
+            {readSection.length === 0 ? (
               <h5>Read books section is empty!.</h5>
             ) : (
               <Bookshelf
-                title="Read"
-                bookList={readList}
-                currentReadingClick={currentReadingHandler}
+                bookList={readSection}
+                showTextHandler={showTextHandler}
+                updateTheShelf={updateTheShelf}
               />
             )}
           </div>
