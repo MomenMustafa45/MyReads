@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-export const BookOptions = ({ onClick, book, updateTheShelf, bookList }) => {
+export const BookOptions = ({
+  onClick,
+  book,
+  updateTheShelf,
+  bookList,
+  bookShelf,
+}) => {
   // const [defaultShelf, setDefaultShelf] = useState("");
   // required props
   // required props
@@ -8,20 +14,20 @@ export const BookOptions = ({ onClick, book, updateTheShelf, bookList }) => {
   const shelfBook = bookList.filter((item) => item.id === book.id);
 
   const [value, setValue] = useState(
-    shelfBook[0].shelf ? shelfBook[0].shelf : "move"
+    bookShelf ? bookShelf : shelfBook[0].shelf
   );
 
   const updateShelf = (e) => {
     const value = e.target.value;
     updateTheShelf(book, value);
     setValue(value);
-    console.log(value);
+    // console.log(value);
     // onClick();
     if (onClick) {
       onClick();
     }
   };
-
+  // console.log(bookShelf);
   return (
     <>
       <div className="book-shelf-changer">

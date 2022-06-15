@@ -135,7 +135,7 @@ const BooksApp = () => {
     setText(true);
     setTimeout(() => {
       setText(false);
-      console.log(text);
+      // console.log(text);
     }, 3000);
   };
 

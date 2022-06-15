@@ -45,6 +45,7 @@ const SearchPage = ({
 
       if (response.length > 0) {
         setBooks(response);
+        // console.log(response);
       } else {
         setBooks([]);
       }
@@ -90,6 +91,13 @@ const SearchPage = ({
               </div>
             ) : books.length > 0 ? (
               books.map((book) => {
+                let shelf = "none";
+                allBooks.forEach((item) => {
+                  if (book.id === item.id) {
+                    shelf = item.shelf;
+                  }
+                });
+
                 return (
                   <li key={book.id}>
                     <Book
@@ -102,6 +110,7 @@ const SearchPage = ({
                       book={book}
                       currentClick={showTextHandler}
                       bookList={books}
+                      bookShelf={shelf ? shelf : "move"}
                     />
                   </li>
                 );
