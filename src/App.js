@@ -28,6 +28,7 @@ const BooksApp = () => {
 
   const [books, setBooks] = useState([]);
   const [text, setText] = useState(false);
+  const [render, setRender] = useState(false);
 
   // const [currentReadingList, setCurrentReadingList] = useState([]);
   // const [wantToReadList, setWantToReadList] = useState([]);
@@ -127,6 +128,7 @@ const BooksApp = () => {
       (prevState) => prevState.filter((book) => book.id !== response.id),
       response
     );
+    setRender(!render);
   };
 
   const showTextHandler = () => {
@@ -136,6 +138,7 @@ const BooksApp = () => {
       console.log(text);
     }, 3000);
   };
+
   useEffect(
     () => {
       const getData = async () => {
@@ -144,7 +147,7 @@ const BooksApp = () => {
       };
       getData();
     },
-    [showTextHandler]
+    [render]
   );
 
   return (
@@ -167,6 +170,7 @@ const BooksApp = () => {
               updateTheShelf={updateShelf}
               showText={text}
               showTextHandler={showTextHandler}
+              allBooks={books}
             />
           }
         />

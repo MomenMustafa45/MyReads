@@ -4,7 +4,12 @@ import * as BooksAPI from "../BooksAPI";
 import { Link } from "react-router-dom";
 import Book from "../components/Book";
 
-const SearchPage = ({ updateTheShelf, showText, showTextHandler }) => {
+const SearchPage = ({
+  updateTheShelf,
+  showText,
+  showTextHandler,
+  allBooks,
+}) => {
   const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
 
@@ -79,29 +84,11 @@ const SearchPage = ({ updateTheShelf, showText, showTextHandler }) => {
             </div>
           )}
           <ol className="books-grid">
-            {books.length === 0 ? (
+            {filteredBooks.length === 0 ? (
               <div>
-                <h5>Search for your favorite book (EX):</h5>
-                <p>
-                  'Android', 'Art', 'Artificial Intelligence', 'Astronomy',
-                  'Austen', 'Baseball', 'Basketball', 'Bhagat', 'Biography',
-                  'Brief', 'Business', 'Camus', 'Cervantes', 'Christie',
-                  'Classics', 'Comics', 'Cook', 'Cricket', 'Cycling', 'Desai',
-                  'Design', 'Development', 'Digital Marketing', 'Drama',
-                  'Drawing', 'Dumas', 'Education', 'Everything', 'Fantasy',
-                  'Film', 'Finance', 'First', 'Fitness', 'Football', 'Future',
-                  'Games', 'Gandhi', 'Homer', 'Horror', 'Hugo', 'Ibsen',
-                  'Journey', 'Kafka', 'King', 'Lahiri', 'Larsson', 'Learn',
-                  'Literary Fiction', 'Make', 'Manage', 'Marquez', 'Money',
-                  'Mystery', 'Negotiate', 'Painting', 'Philosophy',
-                  'Photography', 'Poetry', 'Production', 'Programming', 'React',
-                  'Redux', 'River', 'Robotics', 'Rowling', 'Satire', 'Science
-                  Fiction', 'Shakespeare', 'Singh', 'Swimming', 'Tale', 'Thrun',
-                  'Time', 'Tolstoy', 'Travel', 'Ultimate', 'Virtual Reality',
-                  'Web Development', 'iOS'
-                </p>
+                <h5>Search for your favorite book:</h5>
               </div>
-            ) : (
+            ) : books.length > 0 ? (
               books.map((book) => {
                 return (
                   <li key={book.id}>
@@ -111,14 +98,16 @@ const SearchPage = ({ updateTheShelf, showText, showTextHandler }) => {
                         book.imageLinks ? book.imageLinks.smallThumbnail : ""
                       }
                       authors={book.authors}
-                      id={book.id}
                       updateTheShelf={updateTheShelf}
                       book={book}
                       currentClick={showTextHandler}
+                      bookList={books}
                     />
                   </li>
                 );
               })
+            ) : (
+              "there is no boook includes this characters"
             )}
           </ol>
         </div>

@@ -83,6 +83,7 @@ const ListBooksPage = ({ showTextHandler, updateTheShelf, allBooks }) => {
                 bookList={currentReadingSection}
                 showText={showTextHandler}
                 updateTheShelf={updateTheShelf}
+                allBook={allBooks}
               />
             )}
             <h2 className="bookshelf-title">Want to Read</h2>
@@ -93,6 +94,7 @@ const ListBooksPage = ({ showTextHandler, updateTheShelf, allBooks }) => {
                 bookList={wantToReadSection}
                 showTextHandler={showTextHandler}
                 updateTheShelf={updateTheShelf}
+                allBook={allBooks}
               />
             )}
             <h2 className="bookshelf-title">Read</h2>

@@ -2,13 +2,14 @@ import React from "react";
 import Book from "./Book";
 import PropTypes from "prop-types";
 
-const Bookshelf = ({ bookList, showTextHandler, updateTheShelf }) => {
+const Bookshelf = ({ bookList, showTextHandler, updateTheShelf, allBooks }) => {
   // required props
   // required props
   Bookshelf.propTypes = {
     bookList: PropTypes.array.isRequired,
     updateTheShelf: PropTypes.func.isRequired,
   };
+
   return (
     <div>
       <div className="bookshelf">

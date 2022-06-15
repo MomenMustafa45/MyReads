@@ -10,6 +10,10 @@ const Book = ({
   currentClick,
   updateTheShelf,
   book,
+  bookList,
+  allBooks,
+  id,
+  bookShelf,
 }) => {
   // required props
 
@@ -38,6 +42,10 @@ const Book = ({
             onClick={currentClick}
             updateTheShelf={updateTheShelf}
             book={book}
+            bookList={bookList}
+            allBooks={allBooks}
+            id={id}
+            bookShelf={bookShelf}
           />
         </div>
         <div className="book-title">{title}</div>
