@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "%20MomenMustafa45.github.io/MyReads/precache-manifest.3d440ae639e78cf61a0c8955465ba448.js"
+  "/MyReads/precache-manifest.02091ce5ce57acab752e910380b10c05.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("%20MomenMustafa45.github.io/MyReads/index.html", {
+workbox.routing.registerNavigationRoute("/MyReads/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
