@@ -1871,13 +1871,15 @@
     "pako" "~1.0.5"
 
 "browserslist@^4.0.0", "browserslist@^4.1.0", "browserslist@^4.1.1", "browserslist@^4.3.3":
-  "integrity" "sha512-u5iz+ijIMUlmV8blX82VGFrB9ecnUg5qEt55CMZ/YJEhha+d8qpBfOFuutJ6F/VKRXjZoD33b6uvarpPxcl3RA=="
-  "resolved" "https://registry.npmjs.org/browserslist/-/browserslist-4.3.4.tgz"
-  "version" "4.3.4"
+  "integrity" "sha512-ok1d+1WpnU24XYN7oC3QWgTyMhY/avPJ/r9T00xxvUOIparA/gc+UPUMaod3i+G6s+nI2nUb9xZ5k794uIwShw=="
+  "resolved" "https://registry.npmjs.org/browserslist/-/browserslist-4.20.4.tgz"
+  "version" "4.20.4"
   dependencies:
-    "caniuse-lite" "^1.0.30000899"
-    "electron-to-chromium" "^1.3.82"
-    "node-releases" "^1.0.1"
+    "caniuse-lite" "^1.0.30001349"
+    "electron-to-chromium" "^1.4.147"
+    "escalade" "^3.1.1"
+    "node-releases" "^2.0.5"
+    "picocolors" "^1.0.0"
 
 "browserslist@4.1.1":
   "integrity" "sha512-VBorw+tgpOtZ1BYhrVSVTzTt/3+vSE3eFUh0N2GCFK1HffceOaf32YS/bs6WiFhjDAblAFrx85jMy3BG9fBK2Q=="
@@ -2052,10 +2054,10 @@
     "lodash.memoize" "^4.1.2"
     "lodash.uniq" "^4.5.0"
 
-"caniuse-lite@^1.0.0", "caniuse-lite@^1.0.30000884", "caniuse-lite@^1.0.30000887", "caniuse-lite@^1.0.30000898", "caniuse-lite@^1.0.30000899":
-  "integrity" "sha512-No5sQ/OB2Nmka8MNOOM6nJx+Hxt6MQ6h7t7kgJFu9oTuwjykyKRSBP/+i/QAyFHxeHB+ddE0Da1CG5ihx9oehQ=="
-  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30000907.tgz"
-  "version" "1.0.30000907"
+"caniuse-lite@^1.0.0", "caniuse-lite@^1.0.30000884", "caniuse-lite@^1.0.30000887", "caniuse-lite@^1.0.30000898", "caniuse-lite@^1.0.30001349":
+  "integrity" "sha512-b+KbWHdHePp+ZpNj+RDHFChZmuN+J5EvuQUlee9jOQIUAdhv9uvAZeEtUeLAknXbkiu1uxjQ9NLp1ie894CuWg=="
+  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001357.tgz"
+  "version" "1.0.30001357"
 
 "capture-exit@^1.2.0":
   "integrity" "sha1-HF/MSJ/QqwDU8ax64QcuMXP7q28="
@@ -3116,10 +3118,10 @@
   "resolved" "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
   "version" "1.1.1"
 
-"electron-to-chromium@^1.3.62", "electron-to-chromium@^1.3.82":
-  "integrity" "sha512-IYhbzJYOopiTaNWMBp7RjbecUBsbnbDneOP86f3qvS0G0xfzwNSvMJpTrvi5/Y1gU7tg2NAgeg8a8rCYvW9Whw=="
-  "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.3.84.tgz"
-  "version" "1.3.84"
+"electron-to-chromium@^1.3.62", "electron-to-chromium@^1.4.147":
+  "integrity" "sha512-sTjBRhqh6wFodzZtc5Iu8/R95OkwaPNn7tj/TaDU5nu/5EFiQDtADGAXdR4tJcTEHlYfJpHqigzJqHvPgehP8A=="
+  "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.161.tgz"
+  "version" "1.4.161"
 
 "elliptic@^6.0.0":
   "integrity" "sha512-BsXLz5sqX8OHcsh7CqBMztyXARmGQ3LWPtGjJi6DiJHq5C/qvi9P3OqgswKSDftbu8+IoI/QDTAm2fFnQ9SZSQ=="
@@ -3208,6 +3210,11 @@
     "is-callable" "^1.1.4"
     "is-date-object" "^1.0.1"
     "is-symbol" "^1.0.2"
+
+"escalade@^3.1.1":
+  "integrity" "sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw=="
+  "resolved" "https://registry.npmjs.org/escalade/-/escalade-3.1.1.tgz"
+  "version" "3.1.1"
 
 "escape-html@~1.0.3":
   "integrity" "sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg="
@@ -6361,12 +6368,17 @@
     "shellwords" "^0.1.1"
     "which" "^1.3.0"
 
-"node-releases@^1.0.0-alpha.11", "node-releases@^1.0.1":
+"node-releases@^1.0.0-alpha.11":
   "integrity" "sha512-ZaZWMsbuDcetpHmYeKWPO6e63pSXLb50M7lJgCbcM2nC/nQC3daNifmtp5a2kp7EWwYfhuvH6zLPWkrF8IiDdw=="
   "resolved" "https://registry.npmjs.org/node-releases/-/node-releases-1.0.3.tgz"
   "version" "1.0.3"
   dependencies:
     "semver" "^5.3.0"
+
+"node-releases@^2.0.5":
+  "integrity" "sha512-U9h1NLROZTq9uE1SNffn6WuPDg8icmi3ns4rEl/oTfIle4iLjTliCzgTsbaIFMq/Xn078/lfY/BL0GWZ+psK4Q=="
+  "resolved" "https://registry.npmjs.org/node-releases/-/node-releases-2.0.5.tgz"
+  "version" "2.0.5"
 
 "normalize-package-data@^2.3.2":
   "integrity" "sha512-9jjUFbTPfEy3R/ad/2oNbKtW9Hgovl5O1FvFWKkKblNXoN/Oou6+9+KKohPK13Yc3/TyunyWhJp6gvRNR/PPAw=="
@@ -6853,6 +6865,11 @@
   "integrity" "sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns="
   "resolved" "https://registry.npmjs.org/performance-now/-/performance-now-2.1.0.tgz"
   "version" "2.1.0"
+
+"picocolors@^1.0.0":
+  "integrity" "sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ=="
+  "resolved" "https://registry.npmjs.org/picocolors/-/picocolors-1.0.0.tgz"
+  "version" "1.0.0"
 
 "pify@^2.0.0":
   "integrity" "sha1-7RQaasBDqEnqWISY59yosVMw6Qw="
