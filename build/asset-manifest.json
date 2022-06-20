@@ -1,14 +1,14 @@
 {
-  "main.css": "%20MomenMustafa45.github.io/MyReads/static/css/main.23b794ce.chunk.css",
-  "main.js": "%20MomenMustafa45.github.io/MyReads/static/js/main.57b211ae.chunk.js",
-  "main.js.map": "%20MomenMustafa45.github.io/MyReads/static/js/main.57b211ae.chunk.js.map",
-  "static/js/1.27f8d13d.chunk.js": "%20MomenMustafa45.github.io/MyReads/static/js/1.27f8d13d.chunk.js",
-  "static/js/1.27f8d13d.chunk.js.map": "%20MomenMustafa45.github.io/MyReads/static/js/1.27f8d13d.chunk.js.map",
-  "runtime~main.js": "%20MomenMustafa45.github.io/MyReads/static/js/runtime~main.516a88f9.js",
-  "runtime~main.js.map": "%20MomenMustafa45.github.io/MyReads/static/js/runtime~main.516a88f9.js.map",
-  "static/media/App.css": "%20MomenMustafa45.github.io/MyReads/static/media/arrow-drop-down.9d4e3f36.svg",
-  "static/css/main.23b794ce.chunk.css.map": "%20MomenMustafa45.github.io/MyReads/static/css/main.23b794ce.chunk.css.map",
-  "index.html": "%20MomenMustafa45.github.io/MyReads/index.html",
-  "precache-manifest.3d440ae639e78cf61a0c8955465ba448.js": "%20MomenMustafa45.github.io/MyReads/precache-manifest.3d440ae639e78cf61a0c8955465ba448.js",
-  "service-worker.js": "%20MomenMustafa45.github.io/MyReads/service-worker.js"
+  "main.css": "/MyReads/static/css/main.59a7e405.chunk.css",
+  "main.js": "/MyReads/static/js/main.31b72025.chunk.js",
+  "main.js.map": "/MyReads/static/js/main.31b72025.chunk.js.map",
+  "static/js/1.27f8d13d.chunk.js": "/MyReads/static/js/1.27f8d13d.chunk.js",
+  "static/js/1.27f8d13d.chunk.js.map": "/MyReads/static/js/1.27f8d13d.chunk.js.map",
+  "runtime~main.js": "/MyReads/static/js/runtime~main.970c0060.js",
+  "runtime~main.js.map": "/MyReads/static/js/runtime~main.970c0060.js.map",
+  "static/media/App.css": "/MyReads/static/media/arrow-drop-down.9d4e3f36.svg",
+  "static/css/main.59a7e405.chunk.css.map": "/MyReads/static/css/main.59a7e405.chunk.css.map",
+  "index.html": "/MyReads/index.html",
+  "precache-manifest.02091ce5ce57acab752e910380b10c05.js": "/MyReads/precache-manifest.02091ce5ce57acab752e910380b10c05.js",
+  "service-worker.js": "/MyReads/service-worker.js"
 }
