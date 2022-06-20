@@ -150,6 +150,8 @@ const BooksApp = () => {
     [render]
   );
 
+  console.log("test");
+
   return (
     <div className="app">
       <p>Hello</p>
