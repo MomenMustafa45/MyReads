@@ -1,10 +1,5 @@
 {
-<<<<<<< HEAD
-  
-  "homepage": ".",
-=======
   "homepage": "https://MomenMustafa45.github.io/MyReads",
->>>>>>> b1fed0d77fc49a19d1e11de6d3de8f35f40b88d4
   "name": "myreads-app",
   "version": "0.1.0",
   "private": true,
@@ -16,7 +11,7 @@
     "react-scripts": "2.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build",
     "build": "react-scripts build",
@@ -35,5 +30,4 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   }
-  
 }

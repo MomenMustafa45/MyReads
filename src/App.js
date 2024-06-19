@@ -135,7 +135,6 @@ const BooksApp = () => {
     setText(true);
     setTimeout(() => {
       setText(false);
-      // console.log(text);
     }, 3000);
   };
 
@@ -150,11 +149,8 @@ const BooksApp = () => {
     [render]
   );
 
-  console.log("test");
-
   return (
     <div className="app">
-    <p>hello</p>
       <Routes>
         <Route
           path="/"
